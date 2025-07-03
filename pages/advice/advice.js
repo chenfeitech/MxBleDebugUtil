@@ -142,7 +142,6 @@ function submiterrorWx(msg, that) {
   .then(res => {
     wx.hideLoading({
       success: (res) => {
-
       },
     })
     if(res.errMsg.indexOf("ok") >= 0){
@@ -155,7 +154,6 @@ function submiterrorWx(msg, that) {
     } else {
       showHintModal("很抱歉，提交失败，请稍后再试吧");
     }
-     
   })
 }
   

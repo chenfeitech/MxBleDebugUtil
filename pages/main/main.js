@@ -40,11 +40,6 @@ Page({
         img:"/images/id_edit.png",
         name:"意见反馈",
         url:"../advice/advice"
-      },
-      {
-        img:"/images/ic_aboutus.png",
-        name:"关于我们",
-        url:"../aboutus/aboutus"
       }
     ] 
     // ,

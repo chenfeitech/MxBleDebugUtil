@@ -1,13 +1,81 @@
-<!-- 主界面 -->
-<view class='view_back'>
-  <view class='show_code_back flex_column flex_center'>
-    <image mode='aspectFill' src='/images/ic_logo.jpg' class='show_code_img'></image>
-    <text class='show_code_name'>{{version.code}}</text> 
-  </view> 
-  <view class='title_class'>梦辛工作室——专业的软件设计、开发团队</view>
-  <view class='center_class text_center' style='margin-top:2vw'>\n我们一直努力创新</view>
-  <text class='content_class' space='ensp'>\n  小梦调试助手是由梦辛工作室为开发人员提供一套调试助手，后期会增加蓝牙调试功能，网络TCP、UDP等调试功能，当然在打造过程中，会有些不仅人意的地方，所以就希望大家多给我们反馈反馈，我们会为您贡上最完美的产品，为您解决更多的问题,可以在淘宝上找到我们，也可以通过搜索微信公众号哦，小梦在这里祝您生活愉快。</text> 
-   <view class='show_code_back flex_column flex_center'>
-  <image mode='aspectFill' src='/images/ic_file.jpg' style="width:50vw;height:50vw;margin-bottom:10vh" ></image> 
-  </view> 
+<!-- pages/aboutus/aboutus.wxml -->
+<view class="container">
+  <!-- Logo 展示区域 -->
+  <view class="logo-section">
+    <image src="/images/logo.png" class="logo-image" mode="aspectFit"></image>
+    <text class="app-name">{{version.name}}</text>
+    <text class="app-version">版本 {{version.code}}</text>
+  </view>
+
+  <!-- 菜单视图 -->
+  <view wx:if="{{currentView == 'menu'}}" class="menu-section">
+    <view class="menu-item" wx:for="{{menuItems}}" wx:key="id" bindtap="onMenuTap" data-id="{{item.id}}">
+      <image src="{{item.icon}}" class="menu-icon" mode="aspectFit"></image>
+      <text class="menu-text">{{item.name}}</text>
+      <text class="menu-arrow">></text>
+    </view>
+  </view>
+
+  <!-- 意见反馈详情 -->
+  <view wx:if="{{currentView == 'feedback'}}" class="detail-section">
+    <view class="detail-header">
+      <text class="back-btn" bindtap="backToMenu">← 返回</text>
+      <text class="detail-title">意见反馈</text>
+    </view>
+    <view class="detail-content">
+      <text class="detail-text">感谢您使用辰霏调试助手！</text>
+      <text class="detail-text">如果您在使用过程中遇到任何问题或有改进建议，请通过以下方式联系我们：</text>
+      <view class="contact-info">
+        <text class="contact-item">• 微信公众号：辰霏工作室</text>
+        <text class="contact-item">• 邮箱：support@chenfeitech.com</text>
+      </view>
+      <text class="detail-text">我们会认真对待每一条反馈，持续改进产品体验。</text>
+    </view>
+  </view>
+
+  <!-- 关于我们详情 -->
+  <view wx:if="{{currentView == 'about'}}" class="detail-section">
+    <view class="detail-header">
+      <text class="back-btn" bindtap="backToMenu">← 返回</text>
+      <text class="detail-title">关于我们</text>
+    </view>
+    <view class="detail-content">
+      <text class="detail-text">辰霏工作室——专业的软件设计、开发团队</text>
+      <text class="detail-text">我们一直努力创新</text>
+      <text class="detail-text">辰霏调试助手是由梦辛工作室为开发人员提供的一套调试助手，包含蓝牙调试功能、数据转换、U时间转换等调试功能。</text>
+      <text class="detail-text">在打造过程中，可能会有些不尽人意的地方，希望大家多给我们反馈，我们会为您奉上最完美的产品，为您解决更多的问题。</text>
+      <text class="detail-text">在这里祝您生活愉快！</text>
+      <view class="qr-code-section">
+        <image src="/images/ic_file.jpg" class="qr-code" mode="aspectFit"></image>
+        <text class="qr-text">扫码关注我们</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 使用说明详情 -->
+  <view wx:if="{{currentView == 'usage'}}" class="detail-section">
+    <view class="detail-header">
+      <text class="back-btn" bindtap="backToMenu">← 返回</text>
+      <text class="detail-title">使用说明</text>
+    </view>
+    <view class="detail-content">
+      <text class="usage-title">主要功能：</text>
+      <view class="usage-list">
+        <text class="usage-item">• 蓝牙设备扫描与连接</text>
+        <text class="usage-item">• 蓝牙数据收发调试</text>
+        <text class="usage-item">• TCP/UDP网络调试</text>
+        <text class="usage-item">• 数据格式转换工具</text>
+        <text class="usage-item">• 时间戳转换工具</text>
+        <text class="usage-item">• MD5加密工具</text>
+        <text class="usage-item">• 指南针功能</text>
+      </view>
+      <text class="usage-title">使用步骤：</text>
+      <view class="usage-list">
+        <text class="usage-item">1. 在主页选择需要的功能模块</text>
+        <text class="usage-item">2. 根据页面提示进行相应操作</text>
+        <text class="usage-item">3. 如需帮助，可查看各功能页面的说明</text>
+      </view>
+      <text class="usage-note">注意：使用蓝牙功能需要授权蓝牙权限</text>
+    </view>
+  </view>
 </view>

@@ -18,8 +18,28 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "小梦调试助手",
+    "navigationBarTitleText": "辰霏调试助手",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/main/main",
+        "iconPath": "images/bt_logo.png",
+        "selectedIconPath": "images/bt_logo.png",
+        "text": "主页"
+      },
+      {
+        "pagePath": "pages/aboutus/aboutus",
+        "iconPath": "images/ic_aboutus.png",
+        "selectedIconPath": "images/ic_aboutus.png",
+        "text": "关于"
+      }
+    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

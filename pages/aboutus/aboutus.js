@@ -7,8 +7,45 @@ Page({
   data: {
     version: {
       code: "1.0.2",
-      name: "梦辛工作室"
-    }
+      name: "辰霏工作室"
+    },
+    currentView: 'menu', // menu, feedback, about, usage
+    menuItems: [
+      {
+        id: 'feedback',
+        name: '意见反馈',
+        icon: '/images/id_edit.png'
+      },
+      {
+        id: 'about',
+        name: '关于我们',
+        icon: '/images/ic_aboutus.png'
+      },
+      {
+        id: 'usage',
+        name: '使用说明',
+        icon: '/images/ic_file.jpg'
+      }
+    ]
+  },
+
+  /**
+   * 点击菜单项
+   */
+  onMenuTap: function(e) {
+    const menuId = e.currentTarget.dataset.id;
+    this.setData({
+      currentView: menuId
+    });
+  },
+
+  /**
+   * 返回菜单
+   */
+  backToMenu: function() {
+    this.setData({
+      currentView: 'menu'
+    });
   },
 
   /**
